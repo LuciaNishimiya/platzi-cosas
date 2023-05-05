@@ -1,10 +1,14 @@
-# Repositorio de Proyectos y Retos de Clases Platzi
-Este repositorio se utiliza para organizar y mantener todos los proyectos y retos que realize como parte de mis clases en Platzi. Cada proyecto o reto se almacena en una rama separada para facilitar la gestión y la revisión.
-# Estructura del Repositorio
- * Ramas: Cada proyecto o reto se almacena en su propia rama. 
- * Documentación: Cada rama incluye su propia documentación en forma de archivos README.md
+# Aprendiendo Desarrollo Frontend con Responsive Design
 
-# Lista de Proyectos y Retos
+Este proyecto tiene como objetivo aprender desarrollo frontend con enfoque en responsive design. Estoy aplicando mis conocimientos en maquetación utilizando HTML y CSS para crear páginas y componentes de un e-commerce de alta calidad. Mi profesora, Estefany Aguilar, está guiándome en este emocionante viaje de mejora como frontend developer.
 
-* sus: sus
-* sus2: sus
+## Características destacadas:
+
+- Uso de variables de CSS para personalizar colores, fuentes y tamaños de la aplicación.
+- Maquetación de páginas web con responsive design, asegurando que el sitio sea compatible con diferentes dispositivos.
+- Identificación de vistas y componentes de la página web para una organización eficiente del código.
+
+## Agradecimientos
+
+Agradezco a Estefany Aguilar por su invaluable orientación y enseñanzas en el campo del desarrollo frontend.
+
