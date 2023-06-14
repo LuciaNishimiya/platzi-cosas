@@ -1,0 +1,47 @@
+:root {
+    --background: #253535;
+    --textcolor: #ffffff;
+    --boxcolor: #51515133;
+    --screencolor: #4f8300;
+}
+
+body {
+    background: var(--background);
+    color: var(--textcolor);
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    flex-direction: column;
+    margin: 10% auto;
+    background-color: var(--boxcolor);
+
+}
+
+.Resultado {
+    border: 4px solid var(--background);
+    margin-top: 5px;
+    margin-bottom: 20px;
+    max-width: 330px;
+    background-color: var(--screencolor);
+}
+
+.Resultado p {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-style: oblique;
+}
+
+button {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+input {
+    width: 60px;
+}

@@ -1,10 +1,13 @@
-# Repositorio de Proyectos y Retos de Clases Platzi
-Este repositorio se utiliza para organizar y mantener todos los proyectos y retos que realize como parte de mis clases en Platzi. Cada proyecto o reto se almacena en una rama separada para facilitar la gestión y la revisión.
-# Estructura del Repositorio
- * Ramas: Cada proyecto o reto se almacena en su propia rama. 
- * Documentación: Cada rama incluye su propia documentación en forma de archivos README.md
+## Lo que aprendí
 
-# Lista de Proyectos y Retos
+A lo largo del curso:
 
-* sus: sus
-* sus2: sus
+- Puse a prueba mis conocimientos de JavaScript resolviendo desafíos y problemas prácticos.
+- Aprendí a conectar JavaScript con HTML para crear sitios web dinámicos e interactivos.
+- Desarrollé mis habilidades de programación con un enfoque en las mejores prácticas y un flujo de trabajo profesional.
+- Experimenté con GitHub Pages para desplegar mis proyectos en Internet y compartirlos con otros.
+
+## Créditos
+
+
+¡Gracias, JuanDC, por compartir tus conocimientos y ayudarme en mi viaje de aprendizaje!
