@@ -1,18 +1,17 @@
-import { TodoCounter } from "./components/TodoCounter/TodoCounter";
-import { TodoSearch } from "./components/TodoSearch/TodoSearch";
-import { TodoContainer } from "./components/TodoContainer/TodoContainer";
-import { TodoItem } from "./components/TodoItem/TodoItem";
-import { CreateTodobutton } from "./components/CreateTodobutton/CreateTodoButton";
+import { TodoCounter } from "./components/TodoCounter";
+import { TodoSearch } from "./components/TodoSearch";
+import { TodoContainer } from "./components/TodoContainer";
+import { TodoItem } from "./components/TodoItem";
+import { CreateTodobutton } from "./components/CreateTodobutton";
 import React, { useState } from "react";
+import { useSaveStorage } from "./services/SaveStorage";
 
 function App() {
-  const [searchValue, setSearchValue] = useState(""); // console.log(searchValue);
+  const [todos, saveTodos] = useSaveStorage("TODOS-HACERES-V1", []);
 
-  const [inputCreateValue, setInputCreateValue] = useState(""); // console.log(searchValue);
+  const [inputCreateValue, setInputCreateValue] = useState("");
 
-  const [todos, setTodos] = useState([
-    { text: "Crear mi primera tarea", completed: false },
-  ]);
+  const [searchValue, setSearchValue] = useState("");
 
   const totalTodos = todos.length;
 
@@ -28,20 +27,20 @@ function App() {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
   const deleteTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
   const createTodo = (todo) => {
     if (todo) {
       const newTodo = { text: todo, completed: false };
-      setTodos([...todos, newTodo]);
+      saveTodos([...todos, newTodo]);
       setInputCreateValue("");
     }
   };

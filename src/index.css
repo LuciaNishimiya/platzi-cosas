@@ -1,8 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
 body {
   margin: 0;
   padding: 0;
-    background: lightgoldenrodyellow;
+  background: lightgoldenrodyellow;
   }
   
   .paper {
@@ -17,7 +18,7 @@ body {
   }
   
   .paper::before {
-    content: '';
+  content: "";
     position: absolute;
     left: 45px;
     height: 100%;
@@ -29,7 +30,9 @@ body {
     margin-top: 40px;
     height: calc(100% - 40px);
     width: 100%;
-    background-image: repeating-linear-gradient(white 0px, white 24px, steelblue 25px);
+  background-image: repeating-linear-gradient(white 0px,
+        white 24px,
+        steelblue 25px);
   }
   
   .text {
@@ -39,7 +42,7 @@ body {
     bottom: 10px;
     right: 10px;
     line-height: 25px;
-    font-family: 'Indie Flower';
+  font-family: "Indie Flower";
     overflow: hidden;
     outline: none;
   }
@@ -53,15 +56,18 @@ body {
     border-radius: 50%;
     box-shadow: inset 0px 0px 2px 0px #888;
   }
-    .hole-top {
-      top: 10%;
-    }
-  
-    .hole-middle {
-      top: 50%;
-    }
-  
-    .hole-bottom {
-      bottom: 10%;
-    }
-                /* Elimina el relleno */
+
+.hole-top {
+  top: 10%;
+}
+
+.hole-middle {
+  top: 50%;
+}
+
+.hole-bottom {
+  bottom: 10%;
+}
+input {
+  font-family: Indie Flower;
+}
