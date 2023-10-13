@@ -4,6 +4,7 @@
 
 .CreateTodoButton input {
   width: 340px;
+  margin-left: 1px;
   background-color: transparent;
   border: transparent;
 }

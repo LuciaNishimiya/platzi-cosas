@@ -1,15 +1,16 @@
-import { TodoCounter } from "./components/TodoCounter";
-import { TodoSearch } from "./components/TodoSearch";
-import { TodoContainer } from "./components/TodoContainer";
-import { TodoItem } from "./components/TodoItem";
-import { CreateTodobutton } from "./components/CreateTodobutton";
+import './App.css';
+import { TodosStatus } from "../components/TodosStatus";
+import { TodoSearch } from "../components/TodoSearch";
+import { TodoContainer } from "../components/TodoContainer";
+import { TodoItem } from "../components/TodoItem";
+import { CreateTodobutton } from "../components/CreateTodobutton";
+import { TodoLoading } from "../components/TodoLoading";
 import React, { useState } from "react";
-import { useSaveStorage } from "./services/SaveStorage";
+import { ManagerStorage } from "../services/ManagerStorage";
 
 function App() {
-  const [todos, saveTodos] = useSaveStorage("TODOS-HACERES-V1", []);
-
   const [inputCreateValue, setInputCreateValue] = useState("");
+  const { createTodo, completeTodo, deleteTodo, todos, todoStatus } = ManagerStorage();
 
   const [searchValue, setSearchValue] = useState("");
 
@@ -23,39 +24,26 @@ function App() {
     return todoLowerCase.includes(SearchLowerCaset);
   });
 
-  const completeTodo = (text) => {
-    const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
-    newTodos[todoIndex].completed = true;
-    saveTodos(newTodos);
-  };
-
-  const deleteTodo = (text) => {
-    const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
-    newTodos.splice(todoIndex, 1);
-    saveTodos(newTodos);
-  };
-
-  const createTodo = (todo) => {
-    if (todo) {
-      const newTodo = { text: todo, completed: false };
-      saveTodos([...todos, newTodo]);
-      setInputCreateValue("");
-    }
-  };
-
   return (
+
     <div className="paper">
       <div className="lines">
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+        <TodoSearch
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
         <div className="text">
-          <TodoCounter completed={completedTodos} total={totalTodos} />
 
+          <TodosStatus
+            completed={completedTodos}
+            total={totalTodos}
+            status={todoStatus}
+          />
+          <TodoLoading status={todoStatus} />
           <TodoContainer>
             {searchedTodos.map((todo) => (
               <TodoItem
-                key={todo.text}
+                key={todo.id}
                 text={todo.text}
                 completed={todo.completed}
                 onComplete={() => completeTodo(todo.text)}
@@ -67,7 +55,12 @@ function App() {
           <CreateTodobutton
             inputCreateValue={inputCreateValue}
             setInputCreateValue={setInputCreateValue}
-            CreateButton={() => createTodo(inputCreateValue)}
+            CreateButton={() => {
+              createTodo(inputCreateValue)
+              setInputCreateValue("");
+            }}
+            totalTodos={totalTodos}
+            todoStatus={todoStatus}
           />
         </div>
       </div>

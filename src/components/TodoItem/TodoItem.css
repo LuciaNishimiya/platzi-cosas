@@ -7,7 +7,8 @@
 }
 
 .TodoItem-p--complete {
-    text-decoration: line-through
+    text-decoration: line-through 2px;
+        text-decoration-color: rgba(73, 70, 70, 0.623);
 }
 
 

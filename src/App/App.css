@@ -71,3 +71,43 @@ body {
 input {
   font-family: Indie Flower;
 }
+.loader {
+  width: 200px;
+  height: 10px;
+  background-color: #ddd;
+  position: relative;
+}
+
+.pencil {
+  width: 20px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  left: -10px;
+  top: -5px;
+  animation: write 2s linear infinite;
+  transform-origin: left;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+@keyframes write {
+
+  0%,
+  100% {
+    transform: scaleX(0);
+  }
+
+  50% {
+    transform: scaleX(1);
+  }
+}
