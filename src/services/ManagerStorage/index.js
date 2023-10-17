@@ -7,16 +7,16 @@ function ManagerStorage() {
         saveItem: saveTodos
     } = useLocalStorage({ itemName: "TODOS-HACERES-V1", initialValue: [] });
 
-    const completeTodo = (text) => {
+    const completeTodo = (todoId) => {
         const newTodos = [...todos];
-        const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+        const todoIndex = newTodos.findIndex((todo) => todo.id === todoId);
         newTodos[todoIndex].completed = true;
         saveTodos(newTodos);
     };
 
-    const deleteTodo = (text) => {
+    const deleteTodo = (todoId) => {
         const newTodos = [...todos];
-        const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+        const todoIndex = newTodos.findIndex((todo) => todo.id === todoId);
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
     };

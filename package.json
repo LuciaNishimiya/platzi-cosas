@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mkdir -p build/haceres && mv build/* build/haceres/",
+    "deploy": "gh-pages -d build/haceres",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -29,5 +30,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }

@@ -5,63 +5,56 @@ import { TodoContainer } from "../components/TodoContainer";
 import { TodoItem } from "../components/TodoItem";
 import { CreateTodobutton } from "../components/CreateTodobutton";
 import { TodoLoading } from "../components/TodoLoading";
-import React, { useState } from "react";
-import { ManagerStorage } from "../services/ManagerStorage";
+import { todoContext } from '../context';
+import { useContext } from 'react';
+import { ModalPostIt } from '../components/ModalPostIt';
 
 function App() {
-  const [inputCreateValue, setInputCreateValue] = useState("");
-  const { createTodo, completeTodo, deleteTodo, todos, todoStatus } = ManagerStorage();
+  const {
+    completedTodos,
+    totalTodos,
+    todoStatus, // 1773
+    completeTodo,
+    deleteTodo,
+    searchedTodos,
+    inputCreateValue,
+    setInputCreateValue,
+    createTodo,
+    searchValue,
+    setSearchValue
 
-  const [searchValue, setSearchValue] = useState("");
-
-  const totalTodos = todos.length;
-
-  const completedTodos = todos.filter((todos) => todos.completed).length;
-
-  const searchedTodos = todos.filter((todos) => {
-    const todoLowerCase = todos.text.toLowerCase();
-    const SearchLowerCaset = searchValue.toLowerCase();
-    return todoLowerCase.includes(SearchLowerCaset);
-  });
+  } = useContext(todoContext)
 
   return (
-
     <div className="paper">
       <div className="lines">
         <TodoSearch
           searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
+          setSearchValue={setSearchValue} />
         <div className="text">
 
           <TodosStatus
-            completed={completedTodos}
-            total={totalTodos}
-            status={todoStatus}
-          />
-          <TodoLoading status={todoStatus} />
+            completedTodos={completedTodos}
+            totalTodos={totalTodos}
+            todoStatus={todoStatus} />
+          <TodoLoading />
+
           <TodoContainer>
             {searchedTodos.map((todo) => (
               <TodoItem
                 key={todo.id}
                 text={todo.text}
                 completed={todo.completed}
-                onComplete={() => completeTodo(todo.text)}
-                onDelete={() => deleteTodo(todo.text)}
-              />
+                onComplete={() => completeTodo(todo.id)}
+                onDelete={() => deleteTodo(todo.id)} />
             ))}
           </TodoContainer>
-
           <CreateTodobutton
             inputCreateValue={inputCreateValue}
             setInputCreateValue={setInputCreateValue}
-            CreateButton={() => {
-              createTodo(inputCreateValue)
-              setInputCreateValue("");
-            }}
+            createTodo={createTodo}
             totalTodos={totalTodos}
-            todoStatus={todoStatus}
-          />
+            todoStatus={todoStatus} />
         </div>
       </div>
       <div className="holes hole-top"></div>

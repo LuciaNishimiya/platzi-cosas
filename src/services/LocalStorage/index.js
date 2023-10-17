@@ -23,7 +23,7 @@ function useLocalStorage({ itemName, initialValue }) {
                     setItem(parsedItem)
                 }
                 setLoadingStatus("Ready")
-            }, 8000);
+            }, 2000);
         } catch (error) {
             setLoadingStatus("Error")
         }

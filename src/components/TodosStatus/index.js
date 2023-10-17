@@ -1,16 +1,19 @@
 import './todosStatus.css';
-function TodosStatus({ completed, total, status }) {
+import React from 'react';
+import { todoContext } from '../../context';
+
+function TodosStatus({ completedTodos, totalTodos, todoStatus }) {
   let message = '';
-  if (status === "Error") {
+  if (todoStatus === "Error") {
     message = 'Se produjo un error al cargar';
-  } else if (status === "Loading") {
-    message = 'Cargando...';
-  } else if (total === 0) {
+  } else if (todoStatus === "Loading") {
+    message = (<><span>Cargando</span><span className="dotLoading1">.</span><span className="dotLoading2">.</span><span className="dotLoading3">.</span></>);
+  } else if (totalTodos === 0) {
     message = 'No tienes tareas pendientes';
-  } else if (completed === total) {
-    message = `Has completado todas tus tareas(${total})`;
+  } else if (completedTodos === totalTodos) {
+    message = `Has completado todas tus tareas(${totalTodos})`;
   } else {
-    message = `Has completado ${completed} de ${total} tareas`;
+    message = `Has completado ${completedTodos} de ${totalTodos} tareas`;
   }
 
   return (

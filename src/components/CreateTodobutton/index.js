@@ -4,10 +4,14 @@ import "./CreateTodoButton.css";
 function CreateTodobutton({
     inputCreateValue,
     setInputCreateValue,
-    CreateButton,
+    createTodo,
     totalTodos,
-    todoStatus
-}) {
+    todoStatus }) {
+
+    function CreateButton() {
+        createTodo(inputCreateValue)
+        setInputCreateValue("");
+    }
     if (todoStatus === "Ready") 
     return (
         <li className="CreateTodoButton">

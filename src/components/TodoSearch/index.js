@@ -1,7 +1,5 @@
 import "./TodoSearch.css";
-
 function TodoSearch({ searchValue, setSearchValue }) {
-
     return (
         <input
             className="TodoSearch"

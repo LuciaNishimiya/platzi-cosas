@@ -13,3 +13,33 @@
 .completedTodos {
   display: none;
 }
+.dotLoading1,
+.dotLoading2,
+.dotLoading3 {
+  opacity: 0;
+  animation: dotAnimation 1.5s infinite;
+}
+
+.dotLoading1 {
+  animation-delay: 0.4s;
+}
+
+.dotLoading2 {
+  animation-delay: 0.2s;
+}
+
+.dotLoading3 {
+  animation-delay: 0s;
+}
+
+@keyframes dotAnimation {
+
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
