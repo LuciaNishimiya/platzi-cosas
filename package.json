@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mkdir -p build/haceres && mv build/* build/haceres/",
+    "build": "react-scripts build && mkdir -p build/haceres && mv build/* build/",
     "deploy": "gh-pages -d build/haceres",
     "eject": "react-scripts eject"
   },
