@@ -9,7 +9,7 @@ Este repositorio contiene mi trabajo y proyectos realizados durante el curso de 
 - Gestión de estados locales utilizando React Hooks y estados globales con React Context.
 - Análisis de las diferencias entre Create React App, Vite.js y Next.js.
 
-Este curso ha sido una experiencia valiosa en mi camino hacia convertirme en un desarrollador de React.js. Agradezco al profesor JuanDC por su orientación y enseñanzas.
+Este curso ha sido una experiencia valiosa en mi camino hacia convertirme en un desarrolladora. Agradezco al profesor JuanDC por su orientación y enseñanzas.
 
 ## Available Scripts
 
