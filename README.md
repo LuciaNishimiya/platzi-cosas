@@ -4,7 +4,7 @@
 <a href="https://lucianishimiya.github.io/platzi-cosas/haceres/">Ver sitio web</a>
 
 
-Este repositorio contiene mi trabajo y proyectos realizados durante el curso de Introducción a React. Durante este curso, he aprendido a crear aplicaciones web interactivas utilizando React.js y he adquirido habilidades en el manejo de componentes, props, estilos CSS, estados y efectos de React. Además, he implementado conceptos como React Context, React Portals y almacenamiento con Local Storage bajo la guía del profesor JuanDC.
+Este repositorio contiene mi proyecto Haceres la aplicación definitiva para gestionar tus tareas y maximizar tu productividad. Realizadas durante el curso de Introducción a React. Durante este curso, he aprendido a crear aplicaciones web interactivas utilizando React.js y he adquirido habilidades en el manejo de componentes, props, estilos CSS, estados y efectos de React. Además, he implementado conceptos como React Context, React Portals y almacenamiento con Local Storage bajo la guía del profesor JuanDC.
 
 ## Destacados del Curso:
 
@@ -15,28 +15,25 @@ Este repositorio contiene mi trabajo y proyectos realizados durante el curso de 
 
 Este curso ha sido una experiencia valiosa en mi camino hacia convertirme en un desarrolladora. Agradezco al profesor JuanDC por su orientación y enseñanzas.
 
-## Available Scripts
+## Scripts Disponibles
 
-In the project directory, you can run:
+En el directorio del proyecto, puedes ejecutar:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ejecuta la aplicación en modo de desarrollo.\
+Abre [http://localhost:3000](http://localhost:3000) para verla en tu navegador.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La página se recargará cuando realices cambios.\
+También puedes ver cualquier error de lint en la consola.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Compila la aplicación para producción en la carpeta `build`.\
+Agrupa correctamente React en modo de producción y optimiza la compilación para obtener el mejor rendimiento.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+La compilación se minimiza y los nombres de archivo incluyen los hash.\
+¡Tu aplicación está lista para ser desplegada!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Consulta la sección sobre [despliegue](https://facebook.github.io/create-react-app/docs/deployment) para obtener más información.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
