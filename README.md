@@ -1,5 +1,8 @@
 # Curso Introducción a React
 
+<img src="https://raw.githubusercontent.com/LuciaNishimiya/platzi-cosas/curso-react-intro/assets/todo.gif" width="28px" alt="Haceres app">
+[Haceres](https://lucianishimiya.github.io/platzi-cosas/haceres/)
+
 Este repositorio contiene mi trabajo y proyectos realizados durante el curso de Introducción a React. Durante este curso, he aprendido a crear aplicaciones web interactivas utilizando React.js y he adquirido habilidades en el manejo de componentes, props, estilos CSS, estados y efectos de React. Además, he implementado conceptos como React Context, React Portals y almacenamiento con Local Storage bajo la guía del profesor JuanDC.
 
 ## Destacados del Curso:
