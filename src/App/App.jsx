@@ -13,13 +13,14 @@ function AppRoutes() {
 }
 
 import './App.css'
+import Navbar from '../Components/NavBar';
 import Layout from '../Components/Layout';
 
 function App() {
 
   return (
     <BrowserRouter>
-
+      <Navbar />
 
       <Layout>
 
