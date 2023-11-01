@@ -1,11 +1,18 @@
 
 import { useRoutes, BrowserRouter } from 'react-router-dom';
 import Home from '../Pages/Home';
+import MyAccount from '../Pages/MyAccount';
+import MyOrder from '../Pages/MyOrder';
+import MyOrders from '../Pages/MyOrders';
 import NotFound from '../Pages/NotFound';
-
+import SignIn from '../Pages/SignIn';
 function AppRoutes() {
   let routes = useRoutes([
     { path: '/', element: <Home /> },
+    { path: '/order', element: <MyOrder /> },
+    { path: '/account', element: <MyAccount /> },
+    { path: '/orders', element: <MyOrders /> },
+    { path: '/singin', element: <SignIn /> },
     { path: '/*', element: <NotFound /> },
   ]);
 
