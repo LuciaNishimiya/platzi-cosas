@@ -1,4 +1,5 @@
 import Card from "../../Components/Card"
+import Loading from "../../Components/Loading"
 import { products } from "../../Services/products"
 function Home() {
   const { data, isLoading, error } = products()
@@ -9,6 +10,7 @@ function Home() {
         data.map(item =>
           (<Card key={item?.id} price={item?.price} title={item?.title} category={item?.category} image={item?.image}></Card>))
       }
+      <Loading loading={isLoading} error={error}></Loading>
     </div>
   )
 }
