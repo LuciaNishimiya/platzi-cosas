@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom'
+import { categories } from '../../Services/products'
 const Navbar = () => {
+    const { data } = categories()
     const activeStyle = 'underline underline-offset-4'
     return (
         <nav className='flex justify-between items-center bg-white dark:bg-zinc-900 fixed z-10 w-full py-5 px-8 text-sm font-light top-0'>
@@ -18,11 +20,23 @@ const Navbar = () => {
                         All
                     </NavLink>
                 </li>
+                {
+                    data.map(item =>
+                    (<li key={item}>
+                        <NavLink
+                            to={`/${item}`}
+                            className={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                            }>
+                            {item}
+                        </NavLink>
+                    </li>))
+                }
 
             </ul>
             <ul className='flex items-center gap-3'>
                 <li className='text-black/60'>
-                    @example.com
+                    Loli@example.com
                 </li>
                 <li>
                     <NavLink
