@@ -8,7 +8,7 @@ function Home() {
 
       {
         data.map(item =>
-          (<Card key={item?.id} price={item?.price} title={item?.title} category={item?.category} image={item?.image}></Card>))
+          (<Card key={item?.id} id={item?.id} price={item?.price} title={item?.title} category={item?.category} image={item?.image}></Card>))
       }
       <Loading loading={isLoading} error={error}></Loading>
     </div>
