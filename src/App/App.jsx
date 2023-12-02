@@ -8,7 +8,6 @@ import MyOrder from '../Pages/MyOrder';
 import MyOrders from '../Pages/MyOrders';
 import NotFound from '../Pages/NotFound';
 import SignIn from '../Pages/SignIn';
-
 function AppRoutes() {
   let routes = useRoutes([
     { path: '/', element: <Home /> },
@@ -26,17 +25,22 @@ function AppRoutes() {
 import './App.css'
 import Navbar from '../Components/NavBar';
 import Layout from '../Components/Layout';
+import { ProductDetail } from '../Components/ProductDetail';
+import { ProductDetailProvider } from '../Context/productDetail';
 
 function App() {
 
   return (
     <CartProvider>
+      <ProductDetailProvider>
       <BrowserRouter>
-        <Navbar />
+          <Navbar />
+          <ProductDetail />
         <Layout>
           <AppRoutes />
         </Layout> 
     </BrowserRouter>
+      </ProductDetailProvider>
     </CartProvider>
   )
 }
