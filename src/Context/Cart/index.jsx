@@ -8,13 +8,16 @@ export const CartProvider = ({ children }) => {
         if (productInCart >= 0) {
             const newCart = structuredClone(cart)
             newCart[productInCart].quantity += 1
+            newCart[productInCart].totalQuantityPrice = newCart[productInCart].price * newCart[productInCart].quantity
+
             setCart(newCart)
         } else {
             setCart(prevState => ([
                 ...prevState,
                 {
                     ...product,
-                    quantity: 1
+                    quantity: 1,
+                    totalQuantityPrice: product.price
                 }
             ]
             ))
@@ -30,6 +33,7 @@ export const CartProvider = ({ children }) => {
             const newCart = structuredClone(cart)
             if (newCart[productInCart].quantity !== 1) {
                 newCart[productInCart].quantity -= 1
+                newCart[productInCart].totalQuantityPrice = newCart[productInCart].price * newCart[productInCart].quantity
                 setCart(newCart)
             }
 
@@ -43,10 +47,12 @@ export const CartProvider = ({ children }) => {
     const clearCart = () => {
         setCart([])
     }
+    const totalPrice = cart.reduce((sum, product) => sum + product.totalQuantityPrice, 0);
 
     return (
         <CartContext.Provider value={{
             cart,
+            totalPrice,
             addToCart,
             removeOneFromCart,
             removeFromCart,
