@@ -17,6 +17,7 @@ function CartList({ price, title, category, image, id, quantity }) {
                     <p>
                         Category: {category}
                     </p>
+                    <p className='md:hidden'>Price: {price}</p>  
                 </figcaption>
 
             </figure>
@@ -44,11 +45,10 @@ function CartList({ price, title, category, image, id, quantity }) {
                         </svg>
 
                     </button>
-
-
                 </div>
-                <p className='flex justify-center mb-8 text-lg font-medium'>
-                    {price}
+                <p className='flex-col items-center mb-8 text-lg font-medium hidden md:flex'>
+                    <span>Price:</span>
+                    <span>{price}</span>
                 </p>
             </div>
 
