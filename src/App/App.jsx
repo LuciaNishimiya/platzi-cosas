@@ -5,7 +5,7 @@ import Home from '../Pages/Home';
 import Category from '../Pages/category';
 import MyAccount from '../Pages/MyAccount';
 import MyOrder from '../Pages/MyOrder';
-import MyOrders from '../Pages/MyOrders';
+import MyCart from '../Pages/MyCart';
 import NotFound from '../Pages/NotFound';
 import SignIn from '../Pages/SignIn';
 function AppRoutes() {
@@ -14,7 +14,7 @@ function AppRoutes() {
     { path: '/category/:CategoryName', element: <Category /> },
     { path: '/order', element: <MyOrder /> },
     { path: '/account', element: <MyAccount /> },
-    { path: '/orders', element: <MyOrders /> },
+    { path: '/cart', element: <MyCart /> },
     { path: '/singin', element: <SignIn /> },
     { path: '/*', element: <NotFound /> },
 

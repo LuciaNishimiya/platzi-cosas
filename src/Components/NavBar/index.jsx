@@ -43,11 +43,11 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink
-                        to='/orders'
+                        to='/cart'
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
-                        My Orders
+                        My Cart
                     </NavLink>
                 </li>
                 <li>
