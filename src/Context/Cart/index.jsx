@@ -24,6 +24,17 @@ export const CartProvider = ({ children }) => {
     const checkProductInCart = (product) => {
         return cart.some(item => item.id === product.id)
     }
+    const removeOneFromCart = (product) => {
+        const productInCart = cart.findIndex(item => item.id === product.id)
+        if (productInCart >= 0) {
+            const newCart = structuredClone(cart)
+            if (newCart[productInCart].quantity !== 1) {
+                newCart[productInCart].quantity -= 1
+                setCart(newCart)
+            }
+
+        }
+    }
     const removeFromCart = (product) => {
         setCart(prevState => prevState.filter(item => item.id !== product.id))
     }
@@ -37,6 +48,7 @@ export const CartProvider = ({ children }) => {
         <CartContext.Provider value={{
             cart,
             addToCart,
+            removeOneFromCart,
             removeFromCart,
             checkProductInCart,
             clearCart
