@@ -4,7 +4,7 @@ import { CartProvider } from '../Context/Cart';
 import Home from '../Pages/Home';
 import Category from '../Pages/category';
 import MyAccount from '../Pages/MyAccount';
-import MyOrder from '../Pages/MyOrder';
+import MyOrders from '../Pages/MyOrders';
 import MyCart from '../Pages/MyCart';
 import NotFound from '../Pages/NotFound';
 import SignIn from '../Pages/SignIn';
@@ -12,7 +12,7 @@ function AppRoutes() {
   let routes = useRoutes([
     { path: '/', element: <Home /> },
     { path: '/category/:CategoryName', element: <Category /> },
-    { path: '/order', element: <MyOrder /> },
+    { path: '/orders', element: <MyOrders /> },
     { path: '/account', element: <MyAccount /> },
     { path: '/cart', element: <MyCart /> },
     { path: '/singin', element: <SignIn /> },
@@ -27,12 +27,14 @@ import Navbar from '../Components/NavBar';
 import Layout from '../Components/Layout';
 import { ProductDetail } from '../Components/ProductDetail';
 import { ProductDetailProvider } from '../Context/productDetail';
+import { OrdersProvider } from '../Context/Orders';
 
 function App() {
 
   return (
     <CartProvider>
       <ProductDetailProvider>
+        <OrdersProvider>
       <BrowserRouter>
           <Navbar />
           <ProductDetail />
@@ -40,6 +42,7 @@ function App() {
           <AppRoutes />
         </Layout> 
     </BrowserRouter>
+        </OrdersProvider>
       </ProductDetailProvider>
     </CartProvider>
   )

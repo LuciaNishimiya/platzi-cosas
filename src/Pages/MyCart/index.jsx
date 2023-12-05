@@ -1,8 +1,10 @@
 import CartList from "../../Components/CartList";
 import { CartContext } from "../../Context/Cart"
+import { OrdersContext } from "../../Context/Orders"
 import { useContext } from "react";
 function MyCart() {
-  const { cart, totalPrice } = useContext(CartContext);
+  const { cart, totalPrice, clearCart } = useContext(CartContext);
+  const { addOrders } = useContext(OrdersContext);
   if (cart.length) {
     return (
       <>
@@ -13,7 +15,7 @@ function MyCart() {
         </div>
         <div className="flex justify-around items-center bg-gray-50 dark:bg-zinc-900 fixed z-10 w-full py-4 text-lg font-medium bottom-0">
           <p> Total: {totalPrice}</p>
-          <button className="rounded-lg  border px-1">Proceed to checkout</button>
+          <button className="rounded-lg  border px-1" onClick={() => { addOrders(cart, totalPrice), clearCart() }}>Proceed to checkout</button>
         </div>
       </>
 

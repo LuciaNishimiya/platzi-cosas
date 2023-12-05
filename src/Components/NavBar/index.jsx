@@ -2,8 +2,10 @@ import { NavLink } from 'react-router-dom'
 import { categories } from '../../Services/products'
 import { useContext } from 'react';
 import { CartContext } from '../../Context/Cart';
+import { OrdersContext } from '../../Context/Orders';
 const Navbar = () => {
     const { cart } = useContext(CartContext);
+    const { orders } = useContext(OrdersContext);
     const { data } = categories()
     const activeStyle = 'underline underline-offset-4'
     return (
@@ -41,6 +43,19 @@ const Navbar = () => {
                 <li className='text-black/60'>
                     Loli@example.com
                 </li>
+
+                {orders.length ? (
+                    <li>
+                        <NavLink
+                            to='/orders'
+                            className={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                            }>
+                            My Orders
+                        </NavLink>
+                    </li>
+                ) : undefined}
+
                 <li>
                     <NavLink
                         to='/cart'
