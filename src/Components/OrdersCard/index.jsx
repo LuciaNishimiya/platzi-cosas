@@ -1,6 +1,6 @@
 export const OrdersCard = ({ dateTime, products, totalPrice }) => {
   return (
-    <div className='flex flex-col items-center rounded-md  border px-1'>
+    <div className='flex flex-col items-center rounded-md  border px-1 mt-4'>
 
       <p className='text-lg font-semiboldt'>{dateTime}</p>
 
