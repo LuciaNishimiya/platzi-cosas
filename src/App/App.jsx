@@ -25,7 +25,7 @@ function AppRoutes() {
 import './App.css'
 import Navbar from '../Components/NavBar';
 import Layout from '../Components/Layout';
-import { ProductDetail } from '../Components/ProductDetail';
+import { ProductDetailModal } from '../Components/ProductDetailModal';
 import { ProductDetailProvider } from '../Context/productDetail';
 import { OrdersProvider } from '../Context/Orders';
 
@@ -37,7 +37,7 @@ function App() {
         <OrdersProvider>
       <BrowserRouter>
           <Navbar />
-          <ProductDetail />
+            <ProductDetailModal />
         <Layout>
           <AppRoutes />
         </Layout> 
