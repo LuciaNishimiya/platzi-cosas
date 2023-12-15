@@ -1,31 +1,32 @@
 import Api from "../api"
 
 const apiBase = 'https://fakestoreapi.com';
-function getData(apiUrl) {
-    const { data, isLoading, error } = Api(apiUrl);
-    return { data, isLoading, error };
+function getData({ url, setData }) {
+    Api({ url, setData });
 }
 
-export function products(limit) {
-    let apiUrl = `${apiBase}/products`
+export function products(setData, limit) {
+    let url = `${apiBase}/products`
     if (limit) {
-        apiUrl += `?limit=${limit}`;
+        url += `?limit=${limit}`;
     }
-    return getData(apiUrl)
+    getData({ url, setData })
 }
 
-export function category(category, limit) {
-    let apiUrl = `${apiBase}/products/category/${category}`
+export function category(setData, category, limit) {
+    let url = `${apiBase}/products/category/${category}`
     if (limit) {
-        apiUrl += `?limit=${limit}`;
+        url += `?limit=${limit}`;
     }
-    return getData(apiUrl)
+    getData({ url, setData })
 }
 
-export function categories() {
-    return getData(`${apiBase}/products/categories`)
+export function categories(setData) {
+    let url = `${apiBase}/products/categories`
+    getData({ url, setData })
 }
 
-export function single(productId) {
-    return getData(`${apiBase}/products/${productId}`)
+export function single(setData, productId) {
+    let url = `${apiBase}/products/${productId}`
+    getData({ url, setData })
 }

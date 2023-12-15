@@ -28,23 +28,36 @@ import Layout from '../Components/Layout';
 import { ProductDetailModal } from '../Components/ProductDetailModal';
 import { ProductDetailProvider } from '../Context/productDetail';
 import { OrdersProvider } from '../Context/Orders';
-
+import { SearchProductProvider } from '../Context/search';
+import { ProductsProvider } from '../Context/Products';
+import { NavCategoriesProvider } from '../Context/NavCategories';
+import { ProductsByCategoryProvider } from '../Context/ProductsByCategory';
 function App() {
 
   return (
+    <ProductsProvider>
+      <ProductsByCategoryProvider>
     <CartProvider>
       <ProductDetailProvider>
         <OrdersProvider>
-      <BrowserRouter>
-          <Navbar />
+              <NavCategoriesProvider>
+                <BrowserRouter>
+                  <Navbar />
             <ProductDetailModal />
-        <Layout>
-          <AppRoutes />
-        </Layout> 
-    </BrowserRouter>
+
+                  <SearchProductProvider>
+                    <Layout>
+                      <AppRoutes />
+                    </Layout>
+                  </SearchProductProvider>
+
+                </BrowserRouter>
+              </NavCategoriesProvider>
         </OrdersProvider>
       </ProductDetailProvider>
     </CartProvider>
+      </ProductsByCategoryProvider>
+    </ProductsProvider>
   )
 }
 

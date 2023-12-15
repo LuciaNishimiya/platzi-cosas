@@ -1,29 +1,20 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect } from 'react';
 
-function Api(url) {
-    const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
-
+function Api({ url, setData }) {
     useEffect(() => {
+        setData({ data: [], isLoading: true, error: false });
         const fetchData = async () => {
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-                setData(data);
-                setIsLoading(false);
+                setData({ data, isLoading: false, error: false });
             } catch (error) {
-                setError(error);
-                setIsLoading(false);
+                setData({ isLoading: false, error });
             }
         };
         fetchData();
 
-    }, []);
-
-    const apiData = useMemo(() => ({ data, isLoading, error }), [data, isLoading, error]);
-
-    return apiData;
+    }, [url]);
 }
 
 export default Api;

@@ -1,12 +1,13 @@
 import { NavLink } from 'react-router-dom'
-import { categories } from '../../Services/products'
 import { useContext } from 'react';
 import { CartContext } from '../../Context/Cart';
 import { OrdersContext } from '../../Context/Orders';
+
+import { NavCategoriesContext } from '../../Context/NavCategories';
 const Navbar = () => {
     const { cart } = useContext(CartContext);
     const { orders } = useContext(OrdersContext);
-    const { data } = categories()
+    const { Categories } = useContext(NavCategoriesContext);
     const activeStyle = 'underline underline-offset-4'
     return (
         <nav className='flex justify-between items-center bg-gray-50 dark:bg-zinc-900 fixed z-10 w-full py-5 px-8 text-sm font-light top-0 '>
@@ -26,7 +27,7 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 {
-                    data.map(item =>
+                    Categories?.data?.map(item =>
                     (<li key={item}>
                         <NavLink
                             to={`/category/${item}`}
