@@ -1,8 +1,7 @@
-# React + Vite
+# Curso práctico de React Vite y Tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+En este curso práctico de React, Vite y Tailwind, hacemos una ecommerce aprovechando todas las funcionalidades de React junto a la profesora Estefani Aguilar
 
-Currently, two official plugins are available:
+Agradezco a la profesora Estefani Aguilar por compartir sus conocimientos, incluso si la temática de hacer la misma tienda de siempre se volvió un tanto repetitiva. Su guía sigue siendo invaluable, y estoy segura de que estas lecciones sentarán las bases para mi crecimiento como desarrolladora.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+prueba la tiendita https://lucianishimiya.github.io/platzi-cosas/lolicenter2/ 
