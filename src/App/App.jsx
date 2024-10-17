@@ -1,5 +1,6 @@
-
-import { useRoutes, BrowserRouter } from 'react-router-dom';
+import { useContext } from 'react';
+import { useRoutes, BrowserRouter, Navigate} from 'react-router-dom';
+import { AuthProvider, AuthContext} from '../Context/Auth';
 import { CartProvider } from '../Context/Cart';
 import Home from '../Pages/Home';
 import Category from '../Pages/category';
@@ -9,13 +10,14 @@ import MyCart from '../Pages/MyCart';
 import NotFound from '../Pages/NotFound';
 import SignIn from '../Pages/SignIn';
 function AppRoutes() {
+  const { isAuthenticated } = useContext(AuthContext);
   let routes = useRoutes([
     { path: '/', element: <Home /> },
     { path: '/category/:CategoryName', element: <Category /> },
-    { path: '/orders', element: <MyOrders /> },
-    { path: '/account', element: <MyAccount /> },
-    { path: '/cart', element: <MyCart /> },
-    { path: '/singin', element: <SignIn /> },
+    { path: '/orders', element: isAuthenticated() ? <MyOrders /> : <Navigate to="/signin" />},
+    { path: '/account', element: isAuthenticated() ? <MyAccount /> : <Navigate to="/signin" />},
+    { path: '/cart', element: isAuthenticated() ? <MyCart /> : <Navigate to="/signin" />},
+    { path: '/signin', element: <SignIn /> },
     { path: '/*', element: <NotFound /> },
 
   ]);
@@ -37,6 +39,7 @@ function App() {
   return (
     <ProductsProvider>
       <ProductsByCategoryProvider>
+        <AuthProvider>
     <CartProvider>
       <ProductDetailProvider>
         <OrdersProvider>
@@ -56,6 +59,7 @@ function App() {
         </OrdersProvider>
       </ProductDetailProvider>
     </CartProvider>
+    </AuthProvider>
       </ProductsByCategoryProvider>
     </ProductsProvider>
   )
