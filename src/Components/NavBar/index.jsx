@@ -2,12 +2,14 @@ import { NavLink } from 'react-router-dom'
 import { useContext } from 'react';
 import { CartContext } from '../../Context/Cart';
 import { OrdersContext } from '../../Context/Orders';
-
+import { AuthContext } from '../../Context/Auth';
 import { NavCategoriesContext } from '../../Context/NavCategories';
+
 const Navbar = () => {
     const { cart } = useContext(CartContext);
     const { orders } = useContext(OrdersContext);
     const { Categories } = useContext(NavCategoriesContext);
+    const { authData, isAuthenticated } = useContext(AuthContext);
     const activeStyle = 'underline underline-offset-4'
     return (
         <nav className='flex justify-between items-center bg-gray-50 dark:bg-zinc-900 fixed z-10 w-full py-5 px-8 text-sm font-light top-0 '>
@@ -42,7 +44,7 @@ const Navbar = () => {
             </ul>
             <ul className='flex items-center gap-3'>
                 <li className='text-black/60'>
-                    Loli@example.com
+                    {authData.username}
                 </li>
 
                 {orders.length ? (
@@ -77,11 +79,11 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink
-                        to='/singin'
+                        to='/signin'
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
-                        Sign In
+                         {isAuthenticated() ? 'Log Out' : 'Sign In'}
                     </NavLink>
                 </li>
                 <li className='flex justify-center'>
